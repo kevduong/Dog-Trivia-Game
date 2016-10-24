@@ -9,29 +9,36 @@
 
     <body>
     <!--Start -->
-    <button type="button" class="btn btn-default">Start</button>
+    <button type="button" id="start-btn" class="btn btn-default">Start</button>
 
-    <!-- Counter -->
-    <div id="show-number"></div>
-        
+    <!-- Timer -->
+    <div id="timer"></div>
+    
+    <div id="hello_world">
     <!-- Questions -->
-    <div class="question"></div>
+    <div id="question">
+
+        <!-- Choice -->
+        <ol id="choices">
+            <li id="choice0" value="0" src="#"></li>
+            <li id="choice1" value="1" src="#"></li>
+            <li id="choice2" value="2"></li>
+            <li id="choice3" value="3"></li>
+        </ol>
+    </div>
     
-    <!-- Answer Bank -->
-    <div class="container">
-        <div class="row answer0"></div>
-        <div class="row answer1"></div>
-        <div class="row answer2"></div>
-        <div class="row answer3"></div>
-        </div>
-        
-        
-        
-        
-        
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Answer Display -->
+    
+    <div id="answer"></div>
+    <div id="doggy"></div>
+    
+    <!-- Right vs Wrong -->
+    <div id="stats"></div>        
+    </div>
+    
+    <!-- JS + jQuery -->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
-    </body>
     
+    </body>
 </html>
