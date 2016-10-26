@@ -5,18 +5,23 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         
         <title>Trivia Game</title>
-    </head>
+</head>
 
-    <body>
+<body>
+    <div class="jumbotron">
+    <h1>DOG TRIVIA GAME</h1>
     <!--Start -->
     <button type="button" id="start-btn" class="btn btn-default">Start</button>
-
+    </div>    
     <!-- Timer -->
-    <div id="timer"></div>
-    
+    <div class="container well">
+        
+        <div class="row>">
+            <div id="countDown"></div>
+    </div>
     <div id="hello_world">
     <!-- Questions -->
-    <div id="question">
+    <div id="question"> 
 
         <!-- Choice -->
         <ol id="choices">
@@ -25,7 +30,7 @@
             <li id="choice2" value="2"></li>
             <li id="choice3" value="3"></li>
         </ol>
-    </div>
+   </div>
     
     <!-- Answer Display -->
     
@@ -35,7 +40,7 @@
     <!-- Right vs Wrong -->
     <div id="stats"></div>        
     </div>
-    
+    </div>
     <!-- JS + jQuery -->    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>

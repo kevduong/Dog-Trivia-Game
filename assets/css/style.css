@@ -1,0 +1,49 @@
+body{
+    background-color: #1b7659;
+}
+.jumbotron {
+    
+    text-align: center;
+    background-image: url('../images/jumbo-bg.jpg');
+}
+
+.jumbotron h1 {
+    color: white;
+    font-size: 100px;
+    -webkit-text-stroke-width: 4px;
+   -webkit-text-stroke-color: #145842;
+}
+
+.start-btn {
+    position: absolute;
+    
+}
+
+
+.well {
+    text-align: center;
+    background-color: #145842;
+    color: white;
+    font-size: 20px;
+}
+
+#question {
+    font-size: 30px;
+    background-color: #1b7659;
+}
+li {
+    padding-top: 20px;
+    list-style: none;
+}
+
+li:hover {
+    background-color: aqua;
+}
+
+#stats {
+    padding-top: 20px;
+}
+
+img {
+    width: 200px;
+}
