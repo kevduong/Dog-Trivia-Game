@@ -1,4 +1,4 @@
-var counter = 10;
+var counter = 11;
 var correct = 0;
 var wrong = 0;
 var currentPregunta = 0;
@@ -14,7 +14,7 @@ var questions =
     prompt: "The Akita's origin is _____.",
     choices: ["South Korea", "Russia", "Australia", "Japan"],
     answer: 3,
-     
+    image: "assets/images/akita.jpeg",
    }]; 
 
 
@@ -23,47 +23,25 @@ $('#timer').hide();
 
 /////////////////////   Setting the Timer //////////////////////////////
 function run(){
-    time = setInterval(decrement, 1000);
+    time = setInterval(decrement, 1100);
 }
 
 function decrement(){
+console.log('hi');
     counter--;
     $('#timer').html('<h2> You have ' + counter + ' seconds left to answer</h2>');
 
     if (counter == 0){
         wrong++;
-        wrong();
+        tryAgain();
+        stopTime();
         $('#question').hide();
     }
-    
-function stopTime() {
-    counter = 10;
-};
-
 }
 
-
-//function finalCountDown() {
-//    counter--;
-//    $('#timer').html('<h2> You have ' + counter + ' seconds left to answer</h2>');
-//
-//    // Condition
-//    if (counter == 0){
-//        wrong++;
-//        wrong();
-//        $('#question').hide();
-//    }
-//};
-//  
-//function stopTime() {
-//    counter = 10;
-//};
-//
-//function timeGO() {
-//    counter = setInterval(finalCountDown, 900);
-//}
-//
-
+function stopTime(){
+    clearInterval(time);
+}
 /////////////////////   Start    //////////////////////////////
 
 $('#start-btn').on('click', function(){
@@ -86,7 +64,7 @@ function beginTrivia() {
     $('#question').append('<li value=2>'+ questions[currentPregunta].choices[2] + '</li>');
     $('#question').append('<li value=3>'+ questions[currentPregunta].choices[3] + '</li>');
     
-    //stats
+    //add stats
     
     $('li').on('click', function(){
         $('#question').hide();
@@ -98,7 +76,7 @@ function beginTrivia() {
         }
         else {
             wrong++;
-            wrong();
+            tryAgain();
         }
     });
 };
@@ -108,34 +86,39 @@ function beginTrivia() {
 function goodJob() {
     $('#answer').show();
     $('#doggy').show();
-    $('#answer').html('<h3>That was PAWESOME. You must be a dog expert!</h3>');
-    $('#doggy').append('<img width="400px" src="' +questions[currentPregunta].image+ '">');
+    $('#answer').html(questions[currentPregunta].answer + '<br><h3>That was PAWESOME. You must be a dog expert!</h3>');
+    $('#doggy').html('<img width="400px" src="' +questions[currentPregunta].image+ '">');
     currentPregunta++;
+    run();
     timeOut();
 
 };
 
 
 /////////////////////   Wrong    //////////////////////////////
-function wrong() {
+function tryAgain() {
+    $('#timer').hide();
     $('#answer').show();
     $('#doggy').show();
-    $('#answer').html('<h3>That was ruff and pawful! Try harder!</h3>');
-    $('#doggy').append('<img width="400px" src="' +questions[currentPregunta].image+ '">');
+    $('#answer').html(questions[currentPregunta].answer +'<br><h3>That was ruff and pawful! Try harder!</h3>');
+    $('#doggy').html('<img width="400px" src="' +questions[currentPregunta].image+ '">');
     currentPregunta++;
+    run();
     timeOut();
 };
 
 function timeOut() {
     $('#timer').hide();
     setTimeout(nextQuestion, 2000)
+    
 };
 /////////////////////   NxtQuestion    //////////////////////////////
 function nextQuestion() {
     if (currentPregunta < questions.length){
-        counter = 10;
+        counter = 11;
         beginTrivia();
         $('#hello_world').show();
+        $('#question').show();
         $('#answer').hide();
         $('#doggy').hide();
                            
